@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import "../App.css"
 import { value } from '../redux/selectors';
+import { useAppSelector } from '../redux/hooks'
 
 interface TxProps {
   name: string,
@@ -17,7 +18,8 @@ const ViewTransactions = () => {
   const params =  useParams()
   console.log(params)
 
-  const testValue = useSelector(value)
+  const testValue = useAppSelector(value)
+  //const testValue = useSelector(value)
   console.log(testValue)
 
   //const done = useSelector(Selectors.isAppInitialized)

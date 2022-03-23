@@ -14,6 +14,7 @@ import { TypedUseSelectorHook, useSelector } from 'react-redux';
 import "../App.css";
 import { txns, value } from '../redux/selectors';
 import { txnActions } from '../redux/reducers'
+import { useAppSelector, useAppDispatch } from '../redux/hooks'
 
 interface BondDetailInfo {
   companyID: number;
@@ -39,7 +40,8 @@ function User() {
 }
 
 export default function Home() {
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
+  const dispatch = useAppDispatch()
 
   const [walletAddress, setWalletAddress] = useState<string>("");
   const [investAmountToAdd, setInvestAmountToAdd] = useState<string>("");
